@@ -203,29 +203,16 @@
 							"listen": "test",
 							"script": {
 								"id": "b39f7dfa-47f0-4ee8-892c-6826ffbf5fee",
-								"type": "text/javascript",
 								"exec": [
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Ocp-Apim-Subscription-Key",
-								"value": "{{SubscriptionKey}}"
-							},
-							{
-								"key": "X-NADOBE-CERT",
-								"value": "{{HeaderCertificate}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
