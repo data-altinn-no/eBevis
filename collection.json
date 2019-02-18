@@ -212,7 +212,23 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Ocp-Apim-Subscription-Key",
+								"value": "{{SubscriptionKey}}",
+								"type": "text"
+							},
+							{
+								"key": "X-NADOBE-CERT",
+								"value": "{{HeaderCertificate}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": ""
