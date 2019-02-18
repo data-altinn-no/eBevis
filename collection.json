@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f4546486-57cd-46fd-be2a-bdb77ea88461",
+		"_postman_id": "d0319401-05fc-427f-a60a-5ced72867e87",
 		"name": "eBevis",
 		"description": "eBevis Acceptance Tests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -32,24 +32,13 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Ocp-Apim-Subscription-Key",
-								"value": "{{SubscriptionKey}}",
-								"type": "text"
-							},
-							{
-								"key": "X-NADOBE-CERT",
-								"value": "{{HeaderCertificate}}",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/metadata/evidencecodes",
+							"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/public/metadata/evidencecodes",
 							"protocol": "{{Scheme}}",
 							"host": [
 								"{{HostName}}"
@@ -57,6 +46,7 @@
 							"path": [
 								"{{Environment}}",
 								"{{ApiVersion}}",
+								"public",
 								"metadata",
 								"evidencecodes"
 							]
@@ -93,7 +83,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/metadata/statuscodes",
+							"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/public/metadata/statuscodes",
 							"protocol": "{{Scheme}}",
 							"host": [
 								"{{HostName}}"
@@ -101,6 +91,7 @@
 							"path": [
 								"{{Environment}}",
 								"{{ApiVersion}}",
+								"public",
 								"metadata",
 								"statuscodes"
 							]
@@ -137,7 +128,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/metadata/errorcodes?Ocp-Apim-Subscription-Key={{SubscriptionKey}}&X-NADOBE-CERT={{HeaderCertificate}}",
+							"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/public/metadata/errorcodes",
 							"protocol": "{{Scheme}}",
 							"host": [
 								"{{HostName}}"
@@ -145,18 +136,9 @@
 							"path": [
 								"{{Environment}}",
 								"{{ApiVersion}}",
+								"public",
 								"metadata",
 								"errorcodes"
-							],
-							"query": [
-								{
-									"key": "Ocp-Apim-Subscription-Key",
-									"value": "{{SubscriptionKey}}"
-								},
-								{
-									"key": "X-NADOBE-CERT",
-									"value": "{{HeaderCertificate}}"
-								}
 							]
 						}
 					},
@@ -730,7 +712,7 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/evidence/{{AccreditationId}}/CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SET_UP",
+									"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/evidence/{{AccreditationId}}/CRITERION.EXCLUSION.CONTRIBUTIONS.PAYMENT_OF_TAXES",
 									"protocol": "{{Scheme}}",
 									"host": [
 										"{{HostName}}"
@@ -740,7 +722,7 @@
 										"{{ApiVersion}}",
 										"evidence",
 										"{{AccreditationId}}",
-										"CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.SET_UP"
+										"CRITERION.EXCLUSION.CONTRIBUTIONS.PAYMENT_OF_TAXES"
 									]
 								}
 							},
@@ -1208,7 +1190,7 @@
 							"response": []
 						},
 						{
-							"name": "evidence/<accreditation-id>/CRITERION.SELECTION.TECHNICAL_PROFESSIONAL_ABILITY.MANAGEMENT.MANAGERIAL_STAFF",
+							"name": "evidence/<accreditation-id>/CRITERION.EXCLUSION.CONTRIBUTIONS.PAYMENT_OF_TAXES",
 							"event": [
 								{
 									"listen": "test",
@@ -1328,7 +1310,7 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY (2 years)",
+					"name": "CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY",
 					"item": [
 						{
 							"name": "authorization",
@@ -1388,7 +1370,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"requestor\": {{RequestorOrgNo}},\r\n  \"subject\": {{SubjectOrgNo}},\r\n  \"evidenceRequests\": [\r\n    {\r\n      \"evidenceCodeName\": \"CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY\",\r\n\t  \"parameters\" : [\r\n\t\t{\r\n\t\t\t\"evidenceParamName\" : \"NumberOfYears\",\r\n\t\t\t\"value\" : 2\r\n\t\t}]\r\n    }\r\n  ]\r\n}"
+									"raw": "{\r\n  \"requestor\": {{RequestorOrgNo}},\r\n  \"subject\": {{SubjectOrgNo}},\r\n  \"evidenceRequests\": [\r\n    {\r\n      \"evidenceCodeName\": \"CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY\",\r\n\t  \"parameters\" : [\r\n\t\t{\r\n\t\t\t\"evidenceParamName\" : \"NumberOfYears\",\r\n\t\t\t\"paramType\" : 2,\r\n\t\t\t\"required\" : true,\r\n\t\t\t\"value\" : 2\r\n\t\t}]\r\n    }\r\n  ]\r\n}"
 								},
 								"url": {
 									"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/authorization",
@@ -1470,7 +1452,7 @@
 							"response": []
 						},
 						{
-							"name": "evidence/<accreditation-id>/CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY",
+							"name": "evidence/<accreditation-id>/CRITERION.EXCLUSION.BUSINESS.BANKRUPTCY",
 							"event": [
 								{
 									"listen": "test",
@@ -2040,7 +2022,7 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/evidence/{{AccreditationId}}/CertificateOfRegistration",
+									"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/evidence/{{AccreditationId}}/CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY",
 									"protocol": "{{Scheme}}",
 									"host": [
 										"{{HostName}}"
@@ -2050,7 +2032,7 @@
 										"{{ApiVersion}}",
 										"evidence",
 										"{{AccreditationId}}",
-										"CertificateOfRegistration"
+										"CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY"
 									]
 								}
 							},
@@ -2302,7 +2284,7 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/evidence/{{AccreditationId}}/UnitBasicInformation",
+									"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/evidence/{{AccreditationId}}/CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY",
 									"protocol": "{{Scheme}}",
 									"host": [
 										"{{HostName}}"
@@ -2312,269 +2294,7 @@
 										"{{ApiVersion}}",
 										"evidence",
 										"{{AccreditationId}}",
-										"UnitBasicInformation"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "evidence/<accreditation-id>",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "885f1f97-c00f-461c-bfcf-6310afe15811",
-										"exec": [
-											"pm.test(\"Status code is 204\", function () {",
-											"    pm.response.to.have.status(204);",
-											"});",
-											"",
-											"pm.test(\"Has empty body\", function () {",
-											"    pm.response.to.have.body(\"\");",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Ocp-Apim-Subscription-Key",
-										"value": "{{SubscriptionKey}}",
-										"type": "text"
-									},
-									{
-										"key": "X-NADOBE-CERT",
-										"value": "{{HeaderCertificate}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/accreditations/{{AccreditationId}}",
-									"protocol": "{{Scheme}}",
-									"host": [
-										"{{HostName}}"
-									],
-									"path": [
-										"{{Environment}}",
-										"{{ApiVersion}}",
-										"accreditations",
-										"{{AccreditationId}}"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "AnnualFinancialReport (2 years)",
-					"item": [
-						{
-							"name": "authorization",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "77dc7775-5a87-448c-8ff4-8d78e0c30a3a",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"",
-											"pm.test(\"Has valid JSON structure in response\", function () {",
-											"    var jsonData = pm.response.json();",
-											"    pm.expect(typeof jsonData).to.equal(\"object\");",
-											"});",
-											"",
-											"pm.test(\"Location header is present\", function () {",
-											"    pm.response.to.have.header(\"Location\");",
-											"});",
-											"",
-											"// Set accreditation ID to global in order to use in subsequent requests",
-											"var loc = pm.response.headers.get(\"Location\");",
-											"var accreditationId = loc.match(/\\/evidence\\/(.+)/)[1];",
-											"pm.environment.set(\"AccreditationId\", accreditationId);",
-											"",
-											"pm.test(\"Has accreditation id in response matching location header\", function () {",
-											"    var jsonData = pm.response.json();",
-											"    pm.expect(jsonData[\"id\"]).to.equal(accreditationId);",
-											"});",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Ocp-Apim-Subscription-Key",
-										"value": "{{SubscriptionKey}}",
-										"type": "text"
-									},
-									{
-										"key": "X-NADOBE-CERT",
-										"value": "{{HeaderCertificate}}",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"requestor\": {{RequestorOrgNo}},\r\n  \"subject\": {{SubjectOrgNo}},\r\n  \"evidenceRequests\": [\r\n    {\r\n      \"evidenceCodeName\": \"AnnualFinancialReport\",\r\n\t  \"parameters\" : [\r\n\t\t{\r\n\t\t\t\"evidenceParamName\" : \"NumberOfYears\",\r\n\t\t\t\"value\" : 2\r\n\t\t}]\r\n    }\r\n  ]\r\n}"
-								},
-								"url": {
-									"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/authorization",
-									"protocol": "{{Scheme}}",
-									"host": [
-										"{{HostName}}"
-									],
-									"path": [
-										"{{Environment}}",
-										"{{ApiVersion}}",
-										"authorization"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "evidence/<accreditation-id>",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "dba7959a-7338-4bec-bd5c-b15820f3ff58",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"",
-											"pm.test(\"Has valid JSON structure in response\", function () {",
-											"    var jsonData = pm.response.json();",
-											"    pm.expect(typeof jsonData).to.equal(\"object\");",
-											"});",
-											"",
-											"pm.test(\"Has evidence code name in JSON response\", function () {",
-											"    var ret = pm.response.json();",
-											"",
-											"    pm.expect(ret.length).to.be.above(0);",
-											"    pm.expect(typeof ret[0][\"evidenceCodeName\"]).to.equal(\"string\");",
-											"    pm.expect(ret[0][\"evidenceCodeName\"].length).to.be.above(0);",
-											"});",
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Ocp-Apim-Subscription-Key",
-										"value": "{{SubscriptionKey}}",
-										"type": "text"
-									},
-									{
-										"key": "X-NADOBE-CERT",
-										"value": "{{HeaderCertificate}}",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/evidence/{{AccreditationId}}",
-									"protocol": "{{Scheme}}",
-									"host": [
-										"{{HostName}}"
-									],
-									"path": [
-										"{{Environment}}",
-										"{{ApiVersion}}",
-										"evidence",
-										"{{AccreditationId}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "evidence/<accreditation-id>/AnnualFinancialReport",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "ba6f1ecb-d1e7-44e4-bcd8-9381b22b4357",
-										"exec": [
-											"pm.test(\"Status code is 200\", function () {",
-											"    pm.response.to.have.status(200);",
-											"});",
-											"",
-											"pm.test(\"Has valid JSON structure in response\", function () {",
-											"    var jsonData = pm.response.json();",
-											"    pm.expect(typeof jsonData).to.equal(\"object\");",
-											"});",
-											"",
-											"pm.test(\"Has evidence status and values\", function () {",
-											"    var jsonData = pm.response.json();",
-											"    pm.expect(jsonData[\"evidenceStatus\"][\"evidenceCodeName\"] !== null).to.be.true;",
-											"    pm.expect(jsonData[\"evidenceValues\"].length).to.be.above(0);",
-											"    pm.expect(jsonData[\"evidenceValues\"][0][\"value\"] !== null).to.be.true;",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Ocp-Apim-Subscription-Key",
-										"type": "text",
-										"value": "{{SubscriptionKey}}"
-									},
-									{
-										"key": "X-NADOBE-CERT",
-										"type": "text",
-										"value": "{{HeaderCertificate}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/evidence/{{AccreditationId}}/AnnualFinancialReport",
-									"protocol": "{{Scheme}}",
-									"host": [
-										"{{HostName}}"
-									],
-									"path": [
-										"{{Environment}}",
-										"{{ApiVersion}}",
-										"evidence",
-										"{{AccreditationId}}",
-										"AnnualFinancialReport"
+										"CRITERION.SELECTION.ECONOMIC_FINANCIAL_STANDING.TURNOVER.GENERAL_YEARLY"
 									]
 								}
 							},
