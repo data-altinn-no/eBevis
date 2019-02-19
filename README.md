@@ -14,7 +14,7 @@ For more information, see [the documentation](https://altinn.github.io/docs/guid
 2. Clone this repo to a local directory
 3. Start Postman, and import the collection by clicking the "Import" button in the upper left and selecting `collection.json`
 4. Import the environments (`*_postman_environments.json`) by clicking "Manage environments" (the cogwheel in the upper right). You usually only want the "staging"-environment.
-5. Edit the environment and enter your API-key as the value for the variable `SubscriptionKey`. The other variables can be left as-is.
+5. Edit the environment and enter your API-key as the value for the variable `SubscriptionKey`. The `SubjectOrgNo` variabel needs a valid organization number, the other variables can be left as-is.
 6. Set up client certificates
      1. Convert your Enterprise Certificate to a cert/key-pair in PEM-format. [See this site](https://www.sslshopper.com/article-most-common-openssl-commands.html) for tips on how to do this with OpenSSL.
      2. Click Settings (the wrench icon in the top right)
