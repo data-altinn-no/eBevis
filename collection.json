@@ -2706,7 +2706,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"requestor\": {{RequestorOrgNo}},\r\n  \"subject\": {{SubjectOrgNo}},\r\n  \"evidenceRequests\": [\r\n    {\r\n      \"evidenceCodeName\": \"CRITERION.EXCLUSION.CONTRIBUTIONS.PAYMENT_OF_TAXES\",\r\n      \"requireConsent\" : true\r\n    }\r\n  ]\r\n}"
+									"raw": "{\r\n  \"requestor\": {{RequestorOrgNo}},\r\n  \"subject\": {{SubjectOrgNo}},\r\n  \"evidenceRequests\": [\r\n    {\r\n      \"evidenceCodeName\": \"CRITERION.EXCLUSION.CONTRIBUTIONS.PAYMENT_OF_TAXES\",\r\n      \"requestConsent\" : true\r\n    }\r\n  ]\r\n}"
 								},
 								"url": {
 									"raw": "{{Scheme}}://{{HostName}}/{{Environment}}/{{ApiVersion}}/authorization",
